@@ -23,12 +23,41 @@
 		<br /><br />
 		<label>Distance en miles</label>: <input id="dist" type="text" name="distance" />
 		<input type='button' onClick='dessin()' value='Dessiner angle' ><br>
+		<input type='button' onClick='dessinArc()' value='Dessiner arc' ><br>
 		<input type='button' onClick='supp()' value='desactiver le dessin' ><br>
 
+		<input type="number" />
+   <input type="color" />
 
 	</form>
+</form>
+<form name="Couleur contour">
+		<select id="menuC">
+				<option value="Black">Noir</option>
+				<option value="Red">Rouge</option>
+				<option value="Green">vert</option>
+		</select>
+</form>
 
-  	<script type="text/javascript" src="script.js"> </script>
+<form name="Couleur remplissage">
+		<select id="menuR">
+				<option value="Black">Noir</option>
+				<option value="Red">Rouge</option>
+				<option value="Green">vert</option>
+		</select>
+</form>
+
+<form name="opacite">
+		<select id="opacite">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value=6> 6 </option>
+		</select>
+</form>
+
+<!--	<script type="text/javascript" src="script.js"> </script> -->
+		<script type="text/javascript" src="arc.js"> </script>
     <div id="docs">
         <p>Le champs Angle sert a indiquer l'angle par rapport au nord en degree.</p>
         <p>Le champs Distance en metres pour indiquer la taille des segments.</p>

@@ -1,7 +1,25 @@
 
+var typeSelect = document.getElementById('menuC');
+var fillSelect= document.getElementById('menuR');
+var opacite= document.getElementById('opacite');
 
-  var draw;
-  var value= 'Circle';
+var newstyle=function changestyle(){
+
+    var contour = typeSelect.value;
+    var remplissage=fillSelect.value;
+    var RedStyles = [
+        new ol.style.Style({
+            fill:new ol.style.Stroke({color: remplissage, width: 4}),
+            stroke: new ol.style.Stroke({color: contour, width: 6})
+        })
+    ];
+
+    return RedStyles;
+
+}
+
+var draw;
+var value= 'Circle';
 
   /*Initialisation de la géometry */
   var geometryFunction = function(coordinate, arc) {
@@ -19,10 +37,11 @@
     var angle1=document.formu.angle1.value*(Math.PI/180); //conversion en Radian
     var offsetY = radius * Math.cos(angle1); //décalage de Y
     var offsetX = radius * Math.sin(angle1); //décalage de X
-      for (var i =0; i<nbr;i++){
-          /*Récupération des angles*/
-           var angle2=(((document.formu.angle2.value*(Math.PI/180))-angle1)*i/nbr)+angle1; //conversion en Radian
-             var ang = document.formu.angle2.value*(Math.PI/180);
+    for (var i =0; i<nbr;i++){
+
+    /*Récupération des angles*/
+    var angle2=(((document.formu.angle2.value*(Math.PI/180))-angle1)*i/nbr)+angle1; //conversion en Radian
+    var ang = document.formu.angle2.value*(Math.PI/180);
 
 
    var offsetY2 =  radius*Math.cos(angle2); //décalage de Y
@@ -67,27 +86,9 @@ if (i==0  ){
 
         });
 
+
+
 //**
-
-var styles = [
-  new ol.style.Style({
-    fill:new ol.style.Fill({
-      color:'rgba(255,255,255,0.2)'
-    }),
-    stroke: new ol.style.Stroke({
-     //color: '#ffcc3',
-     color: '#FF0000',
-
-      width:2
-    }),
-//
-
-//
-
-  })
-
-];
-
 
 //**  la carte
 /*Déclaration d'une première couche raster pour l'affichage de la carte*/
@@ -105,7 +106,7 @@ var source = new ol.source.Vector({
 /*Définition du style pour le dessin*/
 var vector = new ol.layer.Vector({
   source: source,
-  style: styles
+  style: newstyle
     });
 
     var select = new ol.interaction.Select(arcs);
