@@ -24,13 +24,23 @@
 		<label>Distance en miles</label>: <input id="dist" type="text" name="distance" />
 
 	 <input type='button' onClick='dessin()' value='Dessiner angle' ><br>
-		<input type='button' onClick='supp()' value='Desactiver le dessin' ><br>
-	<input type='button' onClick='deplacer()' value='Deplacer le dessin' ><br>
+<br>
+	<label>Desctiver l'interaction dessin </label>: 	<input type='button' onClick='supp()' value='Desactiver le dessin' ><br>
+<br>
+	<label>Desctiver l'interaction deplacer </label>:	<input type='button' onClick='deplacer()' value='Deplacer le dessin' ><br>
+
+
+	<br>
+		<label>Selectionner1 </label>:	<input type='button' onClick='selectionner1()' value='selectionner arc1' ><br> 
+
+		<br>
+			<label>Selectionner2 </label>:	<input type='button' onClick='selectionner2()' value='selectionner arc2' ><br>
 		<!--<input type="number" />-->
   <!-- <input type="color" />-->
 
 	</form>
 </form>
+<label> couleur contour:
 <form name="Couleur contour">
 		<select id="menuC">
 				<option value="Black">Noir</option>
@@ -38,7 +48,9 @@
 				<option value="Green">vert</option>
 		</select>
 </form>
+</label>
 
+<label> couleur remplissage:
 <form name="Couleur remplissage">
 		<select id="menuR">
 			  <option selected value="trans">transp</option>
@@ -47,7 +59,7 @@
 				<option value="Green">vert</option>
 		</select>
 </form>
-
+</label>
 
   <script type="text/javascript" src="fctArc.js"> </script>
 	<script type="text/javascript" src="fctStyle.js"> </script>
