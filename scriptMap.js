@@ -42,7 +42,9 @@ var raster = new ol.layer.Tile({
 
              });
 
+var opaite = document.getElementById('opacite');
     var vector1 = new ol.layer.Vector({
+        opacity : opacite.value,
     style: new ol.style.Style({
           fill: new ol.style.Fill({
             color: 'rgba(255, 255, 255, 0.2)'
@@ -96,21 +98,23 @@ map.addInteraction(selectArc2);
 }// fin de la fonction addInteraction
 
 function deplacer(){
+  map.removeInteraction(draw);
   map.addInteraction(selectArc);
   map.addInteraction(translate);
 }
 
 function selectionner1(){
-
+  map.removeInteraction(draw);
+  map.removeInteraction(selectArc);
   map.addInteraction(selectArc1);
 
 }
-
+/*
 function selectionner2(){
   map.addInteraction(selectArc2);
 
 }
-
+*/
 
 function dessin() {
  addInteraction(draw);
@@ -119,10 +123,10 @@ function dessin() {
 }
 
 
-
+/*
 function supp() {
   map.removeInteraction(draw);
   map.removeInteraction(selectArc);
 
-}
+}*/
 //************

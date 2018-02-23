@@ -17,59 +17,69 @@
 
   <!---->
 	<form name='formu'>
-		<br />
-		<label>Angle1</label>: <input id="ang1" type="text" name="angle1" /> <!--Champs pour saisir le premier angle-->
-		<label>Angle2</label>: <input id="ang2" type="text" name="angle2" />
-		<br /><br />
-		<label>Distance en miles</label>: <input id="dist" type="text" name="distance" />
-
-	 <input type='button' onClick='dessin()' value='Dessiner angle' ><br>
+			<br />
+		<label>Pour dessiner la portion de cercle remplissez les champs suivants</label> :
+		<br />	<br />
+		<label>Angle1</label> <input id="ang1" type="text" name="angle1" /> <!--Champs pour saisir le premier angle-->
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<label>Angle2</label> <input id="ang2" type="text" name="angle2" />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<label>Distance en miles</label> <input id="dist" type="text" name="distance" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <input type='button' onClick='dessin()' value='Dessiner angle' ><br>
 <br>
-	<label>Desctiver l'interaction dessin </label>: 	<input type='button' onClick='supp()' value='Desactiver le dessin' ><br>
-<br>
-	<label>Desctiver l'interaction deplacer </label>:	<input type='button' onClick='deplacer()' value='Deplacer le dessin' ><br>
+	<!-- <label>Desctiver l'interaction dessin </label>: 	<input type='button' onClick='supp()' value='Desactiver le dessin' > -->
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<label> Pour deplacer le dessin </label>:	<input type='button' onClick='deplacer()' value='Cliquez ici' ><br>
 
-
-	<br>
-		<label>Selectionner1 </label>:	<input type='button' onClick='selectionner1()' value='selectionner arc1' ><br> 
-
-		<br>
-			<label>Selectionner2 </label>:	<input type='button' onClick='selectionner2()' value='selectionner arc2' ><br>
-		<!--<input type="number" />-->
-  <!-- <input type="color" />-->
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<!--	<label>Selectionner2 </label>:	<input type='button' onClick='selectionner2()' value='selectionner arc2' ><br> -->
 	</form>
-</form>
-<label> couleur contour:
-<form name="Couleur contour">
-		<select id="menuC">
-				<option value="Black">Noir</option>
-				<option value="Red">Rouge</option>
-				<option value="Green">vert</option>
-		</select>
-</form>
-</label>
 
-<label> couleur remplissage:
-<form name="Couleur remplissage">
-		<select id="menuR">
-			  <option selected value="trans">transp</option>
-				<option value="Black">Noir</option>
-				<option value="Red">Rouge</option>
-				<option value="Green">vert</option>
-		</select>
-</form>
-</label>
+	<label> Contour</label>
+<hr width="50%" color="blue" align=left>
+
+<label>Couleur  </label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label>Opacite </label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label>Epaisseur </label>
+<br/>
+
+ <input id="menuC" type="color" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input id="opacite" type="range" min="0" max="1" step="0.1"  >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <input id="epai" type="number" />
+
+ <br/> <br/>
+
+
+ <label> Remplissage</label>
+<hr width="50%" color="blue" align=left>
+
+<label>Couleur </label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label>Opacite </label>
+
+<br/>
+
+<input id="menuR" type="color" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input id="opacite" type="range" min="0" max="1" step="0.1"  >
+<br/><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type='button' onClick='selectionner1()' value='          Appliquer           ' >
+
 
   <script type="text/javascript" src="fctArc.js"> </script>
 	<script type="text/javascript" src="fctStyle.js"> </script>
 	<script type="text/javascript" src="scriptMap.js"> </script>
 		<!-- <script type="text/javascript" src="arc.js"> </script> -->
-    <div id="docs">
-        <p>Le champs Angle sert a indiquer l'angle par rapport au nord en degree.</p>
-        <p>Le champs Distance en metres pour indiquer la taille des segments.</p>
-        <p>Apres avoir remplie les deux champs, cliquez sur le bouton ''dessiner angle'' puis sur l'endroit voulu sur la map.</p>
 
-    </div>
 </body>
 </html>
