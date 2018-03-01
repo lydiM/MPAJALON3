@@ -1,77 +1,41 @@
 
 var draw;
 var value= 'Circle';
-  //**** l'objet arcs
-  var arcs = new ol.Feature({
-         type: (value),
-         geometryFunction: geometryFunction
+  //**** ceration de l'objet arcs
+var arcs = new ol.Feature({
+    type: (value),
+    geometryFunction: geometryFunction
+                  });
 
-        });
-arcs.setStyle(newstyle);
 //**  la carte
 /*Déclaration d'une première couche raster pour l'affichage de la carte*/
 var raster = new ol.layer.Tile({
-
     source: new ol.source.OSM()
-});
+                              });
 
-/*Déclaration d'une deuxième couche vector pour l'affichage du du dessin*/
-    var selectArc = new ol.interaction.Select({
+    var selectArc = new ol.interaction.Select({ // l'interaction de selection utilisé pour le déplacement
       condition: ol.events.condition.pointerMove,
-      //style : newstyle,
     });
-    var selectArc1 = new ol.interaction.Select({
-        style : newstyle,
-        condition: ol.events.condition.click,
-
-    });
-
-
-    var  selectArc2= new ol.interaction.Select({
-      style : newstyle,
-      condition: ol.events.condition.click,
-
-    });
-
-
+    var selectArc1 = new ol.interaction.Select(); //interaction de selection utilisé pour le changement de style
     var source = new ol.source.Vector({
-              //  features:selectArc.getFeatures(),
-
-               features:[arcs],
+             features:[arcs],
                wrapX: false
-
              });
-
-var opaite = document.getElementById('opacite');
-    var vector1 = new ol.layer.Vector({
+   var opacite = document.getElementById('opacite'); //recuperation de la valeur de l'opacité
+   /*Déclaration d'une deuxième couche vector pour l'affichage du du dessin*/
+   var vector1 = new ol.layer.Vector({
         opacity : opacite.value,
-    style: new ol.style.Style({
-          fill: new ol.style.Fill({
-            color: 'rgba(255, 255, 255, 0.2)'
-          }),
-          stroke: new ol.style.Stroke({
-            color: 'Black',
-            width: 2
-          }),
-        }),
-
-      source: source
-      //style: (typeSelect.onchange =changestyle())
-        });
-
+       style : newstyle,
+       source: source
+                                    });
 
     var translate = new ol.interaction.Translate({
       features: selectArc.getFeatures()
     });
 
-/*Ajout des deux couches au conteneur*/
-
-
 var map = new ol.Map({
 
-  //interactions: ol.interaction.defaults().extend([selectArc,selectArc1,selectArc2]),
-
-  layers: [raster, vector1],
+  layers: [raster, vector1],   /*Ajout des deux couches au conteneur*/
 
   target: 'map',
   view: new ol.View({
@@ -80,53 +44,39 @@ var map = new ol.Map({
      })
    });
 
-/*Fonction qui permet de créer le dessin */
-//**
 function addInteraction() {
   draw = new ol.interaction.Draw({
     source: source,
     type: (value),
-    geometryFunction: geometryFunction
-  });
-
+    geometryFunction: geometryFunction,
+                                });
 
   map.addInteraction(draw);
-//  map.removeInteraction(selectArc)
-map.addInteraction(selectArc2);
-
 
 }// fin de la fonction addInteraction
 
+
+// fonction du bouton de deplacement de l'objet
 function deplacer(){
-  map.removeInteraction(draw);
-  map.addInteraction(selectArc);
-  map.addInteraction(translate);
+  map.removeInteraction(draw);  // on desactive d'abord l'interaction de dessin
+  map.addInteraction(selectArc);  // ensuite on selectionne l'objet
+  map.addInteraction(translate);  // l'objet sera deplacé avec l'interaction translate
 }
 
-function selectionner1(){
+// fonction du bouton de selection de l'objet pour lequel on veut modifier le style
+function selec(){
+  map.removeInteraction(draw);
+  map.addInteraction(selectArc1);
+}
+
+//fonction du bouton appliquer, pour appliqer le style sur les objets
+function appliquer(){
   map.removeInteraction(draw);
   map.removeInteraction(selectArc);
-  map.addInteraction(selectArc1);
-
+  arcs.setStyle(newstyle);
+  vecror1.setOpacity(opacite);
 }
-/*
-function selectionner2(){
-  map.addInteraction(selectArc2);
-
-}
-*/
-
+//fonction du bouton de dessin
 function dessin() {
  addInteraction(draw);
- //addInteraction(draw2);
-
-}
-
-
-/*
-function supp() {
-  map.removeInteraction(draw);
-  map.removeInteraction(selectArc);
-
-}*/
-//************
+              }

@@ -1,32 +1,24 @@
 
-//Recupération valeur menu contour
+//Recupération de valeur du menu contour
 var strokeSelect = document.getElementById('menuC');
-
-// Recupération valeur menu remplissage
+// Recupération de valeur du menu remplissage
 var fillSelect= document.getElementById('menuR');
-var largeur = document.getElementById('epai');
-
-var newstyle=function changestyle(){
-
+// Recupération de valeur de l'epaisseur
+var largeur = document.getElementById('epaisseur');
+//la fonction de style des dessin sur la carte
+var newstyle=function changestyle(arcStyle){
     var contour = strokeSelect.value;
     var remplissage=fillSelect.value;
 
     var arcStyle;
-    if (remplissage != "trans"){
+
     arcStyle = [
         new ol.style.Style({
-            fill:new ol.style.Fill({color: remplissage, width: 1}),
+            fill:new ol.style.Fill({color: remplissage}),
             stroke: new ol.style.Stroke({color: contour, width: largeur.value}),
 
-        })
-    ];}
-    else {
-    arcStyle = [
-            new ol.style.Style({
-                //fill:new ol.style.Stroke({color: remplissage, width: 1}),
-                stroke: new ol.style.Stroke({color: contour, width: largeur.value})
-            })
-    ];}
+                        })
+              ];
 
     return arcStyle;
-}
+   }

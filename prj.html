@@ -28,12 +28,12 @@
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	  <input type='button' onClick='dessin()' value='Dessiner angle' ><br>
 <br>
-	<!-- <label>Desctiver l'interaction dessin </label>: 	<input type='button' onClick='supp()' value='Desactiver le dessin' > -->
+
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<label> Pour deplacer le dessin </label>:	<input type='button' onClick='deplacer()' value='Cliquez ici' ><br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<!--	<label>Selectionner2 </label>:	<input type='button' onClick='selectionner2()' value='selectionner arc2' ><br> -->
+
 	</form>
 
 	<label> Contour</label>
@@ -52,7 +52,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input id="opacite" type="range" min="0" max="1" step="0.1"  >
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- <input id="epai" type="number" />
+ <input id="epaisseur" type="number" />
 
  <br/> <br/>
 
@@ -69,17 +69,20 @@
 
 <input id="menuR" type="color" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input id="opacite" type="range" min="0" max="1" step="0.1"  >
+<!--<input id="opacite" type="range" min="0" max="1" step="0.1"  >-->
+<input id="slider" type="range" min="0" max="1"
+   step="0.1" value="1" oninput="vector1.setOpacity(this.value)">
 <br/><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type='button' onClick='selectionner1()' value='          Appliquer           ' >
+	<input type='button' onClick='appliquer()' value='          Appliquer           ' >
+  <input type='button' onClick='selec()' value='          selectionner           ' >
 
 
   <script type="text/javascript" src="fctArc.js"> </script>
 	<script type="text/javascript" src="fctStyle.js"> </script>
 	<script type="text/javascript" src="scriptMap.js"> </script>
-		<!-- <script type="text/javascript" src="arc.js"> </script> -->
+
 
 </body>
 </html>
