@@ -1,5 +1,5 @@
-//fonction de dessin de l'arc de cercle
-var geometryFunction = function(coordinate,  arc) {
+//fonction de dessin de l'arc de cercle, c'est la fonction à integrer dans le code du portail du shom
+var dessinArc = function(coordinate,  arc) {
  if ( !arc) {
  arc = new ol.geom.Polygon(0);
             }
@@ -20,12 +20,13 @@ var geometryFunction = function(coordinate,  arc) {
 
  var offsetY2 =  radius*Math.cos(angle2); //décalage de Y selon la valeur de l'angle 2 et de la valeur de la boucle
 
- var offsetX2 = radius*Math.sin(angle2); //décalage de X selon la aleur de l'angle1
+ var offsetX2 = radius*Math.sin(angle2); //décalage de X selon la valeur de l'angle1
 
 
  var offY2 = radius * Math.cos(ang); //décalage de Y pour le dernier point de la boucle
 
  var offX2 = radius * Math.sin(ang); //décalage de X pour le dernier point de la boucle
+ //les variables offX2 et offY2 sont utilisés pour le dessin de la 2eme ligne selon la valeur du 2eme angle (ang).
 
 //condition sur les coordonnées selon la valeur de i dans la boucle
 if (i==0  ){  // au debut de la boucle on dessine le premier angle par rapport au nord (angle1)
@@ -44,4 +45,4 @@ newCoordinates.push(  [point[0] + offsetX, point[1] + offsetY],  [point[0], poin
 
   return  arc;
 
-}; //End geometryFunction
+}; //fin de la fonction dessinArc

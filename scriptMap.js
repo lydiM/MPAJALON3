@@ -4,7 +4,7 @@ var value= 'Circle';
   //**** ceration de l'objet arcs
 var arcs = new ol.Feature({
     type: (value),
-    geometryFunction: geometryFunction
+    dessinArc: dessinArc
                   });
 
 //**  la carte
@@ -48,7 +48,7 @@ function addInteraction() {
   draw = new ol.interaction.Draw({
     source: source,
     type: (value),
-    geometryFunction: geometryFunction,
+    geometryFunction: dessinArc,
                                 });
 
   map.addInteraction(draw);
